@@ -56,31 +56,3 @@ whitespace = [i for i in target_string if i in string.whitespace] #create the li
 spaces_count = len(whitespace) #count them as the length of list
 print(f'Whitespaces count in {spaces_count}') #print the result (likely bigger then expected 87)
 
-
-    
-
-
-
-
-
-    # line = line.replace(u'\xa0', '').capitalize()
-    # task_list_2.append(line)
-
-# print (task_list_2)
-
-# task_list_3 = []
-
-# for line in task_list_2:
-#     line = line.split()
-#     task_list_3.append(line)
-
-# new_sent = []
-# for list in task_list_3:
-#     print(list[-1])
-#     #new_sent.append(list[-1])
-
-# #new_sent = ' '.join(new_sent)
-
-# #print(new_sent)
-
-
