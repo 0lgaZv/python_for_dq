@@ -34,8 +34,7 @@ def dicts_with_elems(dict_list):
 
 #calling dicts_with_elems with result of list_of_keys function for lowcase unique letters 
 # and result of dicts_list_creation with list of empty dicts
-dict_list = dicts_with_elems(dicts_list_creation())
-print(dict_list)
+
 
 
 # # 2. get previously generated list of dicts and create one common dict:
@@ -99,18 +98,6 @@ def get_unique_keys(one_dict, one_list):
     for key_,value_ in one_dict.items(): #loop for elements in each dict
         if key_ not in one_list: #if key was not duplicated between dicts
             final_dict[key_]=value_ #add it to final dict as is
-        
-
-
-
-
-
-for dict_ in dict_list: #loop to check each dict in list
-    get_duplucate_keys(dict_list, get_index(dict_list, dict_)) #get duplicated keys
-    get_unique_keys(dict_, checked_keys) #add unique keys to final dict
-
-print(final_dict) #final dict of elements
-
 
 
 # Task three
@@ -196,22 +183,28 @@ homEwork:
   last iz TO calculate nuMber OF Whitespace characteRS in this Tex. caREFULL, not only Spaces, but ALL whitespaces. I got 87.
 """
 
-task_list = normalize_letter_cases_return_list(task_string) #make all letters lowercase
+if __name__ == "__main__":
+    #task_one
+    dict_list = dicts_with_elems(dicts_list_creation())
+    print(dict_list)
+    #task two
+    for dict_ in dict_list: #loop to check each dict in list
+        get_duplucate_keys(dict_list, get_index(dict_list, dict_)) #get duplicated keys
+        get_unique_keys(dict_, checked_keys) #add unique keys to final dict
 
-new_sent = create_new_sentence(task_list) #create new sentence from the last words of all other sentences
+    print(final_dict) #final dict of elements
 
-insert_elem_to_specific_place_in_list('add it to the end of this paragraph', new_sent, task_list) #insert new sentence to specific place
+    #task three
+    task_list = normalize_letter_cases_return_list(task_string) #make all letters lowercase
 
-replace_substring_in_all_list_item(' iz ', ' is ', task_list) #replace all mistaken IZ with IS
+    new_sent = create_new_sentence(task_list) #create new sentence from the last words of all other sentences
 
-task_string = create_commas_separated_text_from_list(task_list) #create final string
+    insert_elem_to_specific_place_in_list('add it to the end of this paragraph', new_sent, task_list) #insert new sentence to specific place
 
-print(task_string)
+    replace_substring_in_all_list_item(' iz ', ' is ', task_list) #replace all mistaken IZ with IS
 
-print(f'Whitespaces count in {count_whitespaces(task_string)}') #count whitespaces(likely more then expected 87)
+    task_string = create_commas_separated_text_from_list(task_list) #create final string
 
+    print(task_string)
 
-    
-
-
-
+    print(f'Whitespaces count in {count_whitespaces(task_string)}') #count whitespaces(likely more then expected 87)
